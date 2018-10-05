@@ -14,12 +14,23 @@
             
             // Jou instructies volgen hier
  
-        var white=robotArm.scan();
- 
+     for(var a=1; a<11; a++){
         robotArm.moveRight();
+     }
+         
+    for(var i=0; i<9; i++){
+       robotArm.moveLeft();
         robotArm.grab();
+    var color=robotArm.scan();
+    if(color=='white'){
+        robotArm.moveRight();
         robotArm.drop();
-  
+        robotArm.moveLeft();
+    }else{
+        robotArm.drop();
+    }
+  }
+
 
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
